@@ -1,0 +1,81 @@
+body {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #d4af37;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    color: #d4af37; /* Gold color */
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.menu-board {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.beer-icon {
+    width: 90px;         /* This keeps them uniform and reasonable */
+    height: 130px;        /* Height set for a "playing card" or label ratio */
+    object-fit: contain;  /* Ensures the image isn't squashed or stretched */
+    border-radius: 8px;   /* Smooths the corners */
+    background: #333;     /* Dark background if the image is transparent */
+    flex-shrink: 0;       /* Prevents the image from getting squeezed by long text */
+}
+
+.beer-item {
+    display: flex;
+    align-items: center;  /* Centers text vertically next to the image */
+    gap: 20px;
+    background: #2a2a2a;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.beer-item.kicked {
+    opacity: 0.5;
+    border-left: 5px solid #ff4444;
+}
+
+.beer-info h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+}
+
+.beer-details {
+    color: #aaa;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.beer-abv {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #888;
+}
