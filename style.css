@@ -1,0 +1,150 @@
+/* 1. BASE LAYOUT */
+body {
+    background-color: #000000; 
+    color: #f4f4f4;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 30px 20px 30px;
+    background: transparent;
+}
+
+/* 2. LOGO & HEADER - RESTORED NEON GLOW */
+header {
+    text-align: center;
+    padding: 40px 0 10px 0;
+}
+
+.logo-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 5.2rem;
+    color: #fff;
+    letter-spacing: 12px;
+    line-height: 0.9;
+    /* Restored Multi-layer Neon Purple Glow */
+    text-shadow: 0 0 10px #fff, 0 0 20px #8a2be2, 0 0 30px #8a2be2, 0 0 40px #8a2be2;
+}
+
+.logo-sub {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 20px;
+    padding-left: 20px;
+    /* Restored subtle Neon Purple Glow */
+    text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
+}
+
+/* 3. MENU STRUCTURE */
+.menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.section-title {
+    color: #bf77ff;
+    border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+    padding-bottom: 8px;
+    margin: 10px 0;
+    font-size: 1.4rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.menu-board {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* 4. BEER ITEM LAYOUT */
+.beer-item {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    background: transparent; 
+    margin-bottom: 25px;
+    padding-left: 10px;
+    border-left: 4px solid #8a2be2;
+}
+
+.beer-icon {
+    width: 85px;
+    height: 110px;
+    object-fit: contain; 
+    background: transparent; 
+    filter: drop-shadow(0 0 10px rgba(0,0,0,1)) drop-shadow(0 0 5px rgba(138, 43, 226, 0.3));
+}
+
+.tap-column {
+    min-width: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(138, 43, 226, 0.3);
+    padding-right: 15px;
+    height: 80px;
+}
+
+.tap-num {
+    color: #bf77ff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(138, 43, 226, 0.8);
+}
+
+.tap-id {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+.beer-info h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000, 0 0 10px #000;
+}
+
+.beer-details {
+    color: #bf77ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.beer-notes {
+    color: #eee;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px #000;
+}
