@@ -1,0 +1,143 @@
+body {
+    background-color: #020008; 
+    color: #f4f4f4;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 30px 20px 30px;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0 15px 0; 
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px; 
+}
+
+.logo-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 5.2rem;
+    color: #fff;
+    margin: 0;
+    line-height: 0.9;
+    letter-spacing: 12px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(138, 43, 226, 1), 0 0 40px rgba(138, 43, 226, 0.8);
+}
+
+.logo-sub {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 20px;
+    padding-left: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 25px rgba(138, 43, 226, 1);
+}
+
+.menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.section-title {
+    color: #bf77ff;
+    border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+    padding-bottom: 8px;
+    margin: 10px 0;
+    font-size: 1.6rem;
+    text-align: center;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+.menu-board {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* --- THE GLASS EFFECT --- */
+.beer-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Very low opacity background - Stars pass through this */
+    background: rgba(255, 255, 255, 0.05); 
+    /* Backdrop blur allows stars to be seen but keeps text readable */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(138, 43, 226, 0.2); 
+    border-left: 5px solid #8a2be2;
+}
+
+.beer-icon {
+    width: 85px;
+    height: 110px; 
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.beer-info h2 {
+    font-size: 1.6rem;
+    margin: 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.beer-details {
+    color: #bf77ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.beer-notes {
+    color: #f0f0f0;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.beer-item.kicked {
+    opacity: 0.2;
+    filter: grayscale(100%);
+}
