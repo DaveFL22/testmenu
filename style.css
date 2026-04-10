@@ -1,0 +1,167 @@
+/* 1. STARFIELD BACKGROUND */
+body {
+    background-color: #0a0a0c;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    color: #f4f4f4;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 40px 20px 40px;
+    box-sizing: border-box;
+}
+
+/* 2. NEON LOGO STYLES */
+header {
+    text-align: center;
+    padding: 40px 0;
+    background: radial-gradient(circle, rgba(63,34,120,0.4) 0%, rgba(10,10,12,0) 70%);
+    flex-shrink: 0;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 5.5rem;
+    color: #fff;
+    margin: 0;
+    line-height: 0.9;
+    letter-spacing: 12px;
+    /* REDUCED GLARE: Removed the heavy white layers */
+    text-shadow: 
+        0 0 8px rgba(0, 115, 255, 0.8),  /* Soft inner blue */
+        0 0 20px rgba(0, 115, 255, 0.5), /* Medium blue glow */
+        0 0 40px rgba(0, 115, 255, 0.3); /* Wide subtle outer glow */
+}
+
+.logo-sub {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 22px;
+    padding-left: 22px;
+    /* REDUCED GLARE: Softer shadow for the sub-text */
+    text-shadow: 
+        0 0 5px rgba(0, 115, 255, 0.6),
+        0 0 15px rgba(0, 115, 255, 0.4);
+}
+
+/* 3. DASHBOARD LAYOUT */
+.menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.section-title {
+    color: #00d4ff;
+    border-bottom: 2px solid #3f2278;
+    padding-bottom: 5px;
+    margin: 15px 0;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 4px;
+    flex-shrink: 0;
+}
+
+.menu-board {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.menu-board::-webkit-scrollbar { width: 5px; }
+.menu-board::-webkit-scrollbar-thumb { background: #3f2278; border-radius: 10px; }
+
+/* 4. BEER CARDS */
+.beer-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(30, 30, 40, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border-left: 6px solid #00d4ff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.beer-icon {
+    width: 90px;
+    height: 125px;
+    object-fit: contain;
+    background: #000;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.beer-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tap-num {
+    background: #00d4ff;
+    color: #000;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.beer-info h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #fff;
+}
+
+.beer-details {
+    color: #00d4ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.beer-notes {
+    color: #aaa;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.beer-item.kicked {
+    opacity: 0.3;
+    filter: grayscale(100%);
+}
