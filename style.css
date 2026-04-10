@@ -1,0 +1,191 @@
+/* =========================================
+   1. CORE LAYOUT & STARFIELD BACKGROUND
+   ========================================= */
+body {
+    background-color: #0a0a0c;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    color: #f4f4f4;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 40px 20px 40px;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   2. PURPLE NEON LOGO (PERFECT GLOW)
+   ========================================= */
+header {
+    text-align: center;
+    padding: 30px 0;
+    /* Deep purple cosmic glow behind the logo */
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, rgba(10, 10, 12, 0) 70%);
+    flex-shrink: 0;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 5.5rem;
+    color: #fff;
+    margin: 0;
+    line-height: 0.9;
+    letter-spacing: 12px;
+    /* Added a tiny white core (5px) for "pop" + layers of Purple/Violet */
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 15px rgba(138, 43, 226, 0.7), 
+        0 0 30px rgba(138, 43, 226, 0.5), 
+        0 0 50px rgba(138, 43, 226, 0.3);
+}
+
+.logo-sub {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 22px;
+    padding-left: 22px;
+    text-shadow: 
+        0 0 10px rgba(138, 43, 226, 0.8),
+        0 0 20px rgba(138, 43, 226, 0.4);
+}
+
+/* =========================================
+   3. DASHBOARD COLUMNS
+   ========================================= */
+.menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.section-title {
+    color: #bf77ff;     /* Light Purple/Lavender Title */
+    border-bottom: 2px solid #4b0082;
+    padding-bottom: 5px;
+    margin: 15px 0;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 4px;
+    flex-shrink: 0;
+}
+
+.menu-board {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Custom Scrollbar */
+.menu-board::-webkit-scrollbar { width: 5px; }
+.menu-board::-webkit-scrollbar-thumb { background: #4b0082; border-radius: 10px; }
+
+/* =========================================
+   4. BEER ITEMS (CARDS)
+   ========================================= */
+.beer-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(35, 20, 50, 0.4); /* Subtle purple tinted cards */
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border-left: 6px solid #8a2be2; /* Electric Purple side border */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.beer-icon {
+    width: 90px;
+    height: 125px;
+    object-fit: contain;
+    background: #000;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.beer-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tap-num {
+    background: #8a2be2; /* Purple Tap Badge */
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.beer-info h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.beer-details {
+    color: #bf77ff; /* Lavender details */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.beer-notes {
+    color: #bbb;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.beer-item.kicked {
+    opacity: 0.25;
+    filter: grayscale(100%);
+}
+
+/* =========================================
+   5. RESPONSIVE (FOR MOBILE)
+   ========================================= */
+@media (max-width: 1000px) {
+    .menu-wrapper {
+        grid-template-columns: 1fr;
+    }
+    body {
+        overflow-y: auto;
+        height: auto;
+    }
+}
